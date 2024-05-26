@@ -2,9 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
+use App\Services\UserService;
 
 class LoginController extends Controller
 {
-    //
+    public function __construct(protected UserService $service)
+    {
+    }
+    
+    public function loginPage()
+    {
+        return view('');
+    }
+
+    public function checkLogin(LoginRequest $request)
+    {
+        //
+    }
 }
