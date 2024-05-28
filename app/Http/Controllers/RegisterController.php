@@ -7,16 +7,18 @@ use App\Services\UserService;
 
 class RegisterController extends Controller
 {
-    public function __construct(UserService $service)
+    public function __construct(protected UserService $service)
     {
     }
     public function registerPage()
     {
-        return view('');
+        return view('auth.register');
     }
 
     public function registerStore(RegisterRequest $request)
     {
-        //
+        $this->service->register($request);
+
+        return to_route('auth.login');
     }
 }

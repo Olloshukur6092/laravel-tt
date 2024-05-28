@@ -13,7 +13,7 @@ class LoginController extends Controller
     
     public function loginPage()
     {
-        return view('');
+        return view('auth.login');
     }
 
     public function checkLogin(LoginRequest $request)
